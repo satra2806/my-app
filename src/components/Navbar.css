@@ -1,0 +1,30 @@
+/* Navbar.css */
+.custom-navbar {
+    background-color: #e1e6f9; /* Background color similar to the image */
+  }
+  
+  .custom-navbar .menu-item,
+  .custom-navbar .submenu-title {
+    color: #000; /* Text color */
+  }
+  
+  .custom-navbar .menu-item:hover,
+  .custom-navbar .submenu-title:hover {
+    background-color: #dde2ed; /* Hover background color */
+    color: #000; /* Hover text color */
+  }
+  
+  .custom-navbar .submenu-open .submenu-title {
+    background-color: #dde2ed; /* Submenu open background color */
+  }
+  
+  .custom-navbar .menu-item-active,
+  .custom-navbar .menu-item-selected {
+    background-color: #cdd7f2; /* Active and selected item background color */
+    color: #000; /* Active and selected item text color */
+  }
+  
+  .custom-navbar .submenu-arrow {
+    color: #000; /* Submenu arrow color */
+  }
+  
