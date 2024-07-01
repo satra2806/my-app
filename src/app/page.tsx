@@ -15,7 +15,7 @@ export default function Home() {
   return (
     <>
       <Navbar />
-      <div className="mt-36 flex">
+      <div className="mt-12 flex">
         <SidebarOpen openSideBar={openSideBar} />
         <div className="flex-grow flex flex-col">
           <Table setOpenSideBar={setOpenSideBar} openSideBar={openSideBar} />

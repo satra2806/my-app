@@ -1,6 +1,6 @@
 import React from 'react';
 import { Disclosure } from '@headlessui/react';
-import {  useDispatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 const sidebarData = [
   {
@@ -58,11 +58,13 @@ const Sidebar: React.FC<ISidebarProps> = ({ openSideBar }) => {
   return (
     <div className="w-64 bg-white shadow-md">
       {sidebarData.map((section, sectionIdx) => (
-        <Disclosure key={sectionIdx} defaultOpen={  sectionIdx === 1}>
+        <Disclosure key={sectionIdx} defaultOpen={sectionIdx === 1}>
           {({ open }) => (
             <>
               <Disclosure.Button
-                className={`flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-${section.color}-600 bg-${section.color}-200 rounded-lg hover:bg-${section.color}-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 mt-2`}
+                className={`flex justify-between w-full px-4 py-2 text-sm font-medium text-left text-${section.color}-600 bg-${section.color}-200 rounded-lg hover:bg-${section.color}-300 focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75 ${
+                  sectionIdx !== 0 ? 'mt-80' : 'mt-2'
+                }`}
               >
                 <span>{section.title}</span>
                 <span>{open ? '-' : '+'}</span>
@@ -72,8 +74,10 @@ const Sidebar: React.FC<ISidebarProps> = ({ openSideBar }) => {
                   {section.items.map((item, itemIdx) => (
                     <li
                       key={itemIdx}
-                      className={`px-4 py-2 ${item.bgColor} ${item.textColor} rounded-lg`}
-                      onClick={() => { dispatch({ type: 'sideBar/SET_SIDE_BAR_VALUE', payload: item.label })  , console.log(item.label ,"satra")}}
+                      className={`cursor-pointer px-4 py-2 ${item.bgColor} ${item.textColor} rounded-lg`}
+                      onClick={() => {
+                        dispatch({ type: 'sideBar/SET_SIDE_BAR_VALUE', payload: item.label });
+                      }}
                     >
                       {item.label}
                     </li>
