@@ -1,0 +1,28 @@
+/* src/ButtonGroup.css */
+.button-group {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .overview {
+    background-color: #1a73e8;
+    color: white;
+  }
+  
+  .modify, .disposition, .history {
+    background-color: #d4edda;
+    color: #155724;
+  }
+  
+  .modify:hover, .disposition:hover, .history:hover, .overview:hover {
+    opacity: 0.8;
+  }
+  

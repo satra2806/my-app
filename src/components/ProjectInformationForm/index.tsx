@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -13,7 +13,36 @@ import { Disclosure } from "@headlessui/react";
 import ChevronDownIcon from "@/icons/ChevronDown";
 import ChevronUpIcon from "@/icons/ChevronUp";
 
-const ProjectInformationForm = () => {
+interface IProjectInformationFormProps {
+  isEditable?: boolean;
+}
+
+const ProjectInformationForm = (
+  { isEditable }: IProjectInformationFormProps
+) => {
+  const [processType, setProcessType] = useState("F&E");
+  const [projectName, setProjectName] = useState(
+    "WR# AWA-3386 1000015 Repair Resurface Access Road, QSA ARSR (linked)"
+  );
+  const [description, setDescription] = useState(
+    "1000015 Repair Resurface Access Road, QSA ARSR"
+  );
+  const [problemStatement, setProblemStatement] = useState(
+    "The existing entrance road consists of destabilized asphalt. The road has several potholes and loose rock due to the deterioration of the binding agent of the asphalt. The road is approximately 400 yards long by 15 feet wide."
+  );
+  const [proposedSolution, setProposedSolution] = useState(
+    "Resurface the existing asphalt road."
+  );
+  const [impacts, setImpacts] = useState("");
+  const [assumptions, setAssumptions] = useState("");
+  const [constraints, setConstraints] = useState("");
+  const [benefits, setBenefits] = useState("");
+  const [cip, setCip] = useState(
+    "S04.02-03 Long Range Radar (LRR) Infrastructure Sustainment"
+  );
+  const [projectCode, setProjectCode] = useState("");
+  const [originatorRom, setOriginatorRom] = useState("$30,000.00");
+
   return (
     <Disclosure>
       {({ open }) => (
@@ -39,7 +68,12 @@ const ProjectInformationForm = () => {
                     </label>
                     <Select>
                       <SelectTrigger>
-                        <Input readOnly placeholder="F&E" />
+                        <Input
+                          value={processType}
+                          onChange={(e) => setProcessType(e.target.value)}
+                          readOnly={!isEditable}
+                          placeholder="F&E"
+                        />
                       </SelectTrigger>
                       <SelectContent>
                         <SelectItem value="F&E">F&E</SelectItem>
@@ -52,8 +86,9 @@ const ProjectInformationForm = () => {
                       Project Name
                     </label>
                     <Input
-                      readOnly
-                      value="WR# AWA-3386 1000015 Repair Resurface Access Road, QSA ARSR (linked)"
+                      value={projectName}
+                      onChange={(e) => setProjectName(e.target.value)}
+                      readOnly={!isEditable}
                     />
                   </div>
                   <div className="col-span-2">
@@ -61,8 +96,9 @@ const ProjectInformationForm = () => {
                       Description
                     </label>
                     <Textarea
-                      readOnly
-                      value="1000015 Repair Resurface Access Road, QSA ARSR"
+                      value={description}
+                      onChange={(e) => setDescription(e.target.value)}
+                      readOnly={!isEditable}
                     />
                   </div>
                   <div className="col-span-2">
@@ -70,8 +106,9 @@ const ProjectInformationForm = () => {
                       Problem Statement
                     </label>
                     <Textarea
-                      readOnly
-                      value="The existing entrance road consists of destabilized asphalt. The road has several potholes and loose rock due to the deterioration of the binding agent of the asphalt. The road is approximately 400 yards long by 15 feet wide."
+                      value={problemStatement}
+                      onChange={(e) => setProblemStatement(e.target.value)}
+                      readOnly={!isEditable}
                     />
                   </div>
                   <div className="col-span-2">
@@ -79,38 +116,57 @@ const ProjectInformationForm = () => {
                       Proposed Solution
                     </label>
                     <Textarea
-                      readOnly
-                      value="Resurface the existing asphalt road."
+                      value={proposedSolution}
+                      onChange={(e) => setProposedSolution(e.target.value)}
+                      readOnly={!isEditable}
                     />
                   </div>
                   <div className="col-span-1">
                     <label className="block text-sm font-medium">Impacts</label>
-                    <Textarea readOnly />
+                    <Textarea
+                      value={impacts}
+                      onChange={(e) => setImpacts(e.target.value)}
+                      readOnly={!isEditable}
+                    />
                   </div>
                   <div className="col-span-1">
                     <label className="block text-sm font-medium">
                       Assumptions
                     </label>
-                    <Textarea readOnly />
+                    <Textarea
+                      value={assumptions}
+                      onChange={(e) => setAssumptions(e.target.value)}
+                      readOnly={!isEditable}
+                    />
                   </div>
                   <div className="col-span-1">
                     <label className="block text-sm font-medium">
                       Constraints
                     </label>
-                    <Textarea readOnly />
+                    <Textarea
+                      value={constraints}
+                      onChange={(e) => setConstraints(e.target.value)}
+                      readOnly={!isEditable}
+                    />
                   </div>
                   <div className="col-span-1">
                     <label className="block text-sm font-medium">
                       Benefits
                     </label>
-                    <Textarea readOnly />
+                    <Textarea
+                      value={benefits}
+                      onChange={(e) => setBenefits(e.target.value)}
+                      readOnly={!isEditable}
+                    />
                   </div>
                   <div className="col-span-2">
                     <label className="block text-sm font-medium">CIP</label>
                     <Select>
                       <SelectTrigger>
                         <Input
-                          readOnly
+                          value={cip}
+                          onChange={(e) => setCip(e.target.value)}
+                          readOnly={!isEditable}
                           placeholder="S04.02-03 Long Range Radar (LRR) Infrastructure Sustainment"
                         />
                       </SelectTrigger>
@@ -127,13 +183,21 @@ const ProjectInformationForm = () => {
                     <label className="block text-sm font-medium">
                       Project Code
                     </label>
-                    <Input readOnly />
+                    <Input
+                      value={projectCode}
+                      onChange={(e) => setProjectCode(e.target.value)}
+                      readOnly={!isEditable}
+                    />
                   </div>
                   <div className="col-span-2">
                     <label className="block text-sm font-medium">
                       Originator ROM
                     </label>
-                    <Input readOnly value="$30,000.00" />
+                    <Input
+                      value={originatorRom}
+                      onChange={(e) => setOriginatorRom(e.target.value)}
+                      readOnly={!isEditable}
+                    />
                   </div>
                   <div className="col-span-2 flex justify-end">
                     <Button>Preview Origination PDF</Button>
