@@ -1,4 +1,5 @@
-import React from 'react';
+// components/Navbar.jsx
+import Link from 'next/link';
 import {
   Menubar,
   MenubarMenu,
@@ -8,15 +9,15 @@ import {
   MenubarSub,
   MenubarSubTrigger,
   MenubarSubContent,
-} from '@/components/ui/menubar';
+} from '@/components/ui/menubar'; // Adjust import path as needed
 import './Navbar.css';
 
 const menuData = [
   {
     label: 'Project Management',
     items: [
-      { label: 'Projects' },
-      { label: 'Originated Project' },
+      { label: 'Projects', path: '/' },
+      { label: 'Originated Project', path: '/originated-project' },
       { label: 'New Fac Type / Loc ID Request' },
       { label: 'Program Funding' },
       { label: 'Create JAI/CAI' },
@@ -117,11 +118,9 @@ const menuData = [
   },
 ];
 
-
-
 const Navbar = () => {
-  const renderMenuItems = (items:any) => {
-    return items.map((item:any) => (
+  const renderMenuItems = (items) => {
+    return items.map((item) => (
       item.subItems ? (
         <MenubarSub key={item.label}>
           <MenubarSubTrigger>{item.label}</MenubarSubTrigger>
@@ -130,7 +129,15 @@ const Navbar = () => {
           </MenubarSubContent>
         </MenubarSub>
       ) : (
-        <MenubarItem key={item.label}>{item.label}</MenubarItem>
+        <MenubarItem key={item.label}>
+          {item.path ? (
+            <Link href={item.path} legacyBehavior>
+              <a>{item.label}</a>
+            </Link>
+          ) : (
+            item.label
+          )}
+        </MenubarItem>
       )
     ));
   };

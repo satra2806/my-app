@@ -7,8 +7,9 @@ import { useState } from "react";
 interface ITableProps {
   setOpenSideBar: (openSideBar: boolean) => void;
   openSideBar: boolean;
+  setIsOtherSideBarContentVisible: (isVisible: boolean) => void;
 }
-const Table = ({ setOpenSideBar, openSideBar }: ITableProps) => {
+const Table = ({ setOpenSideBar, openSideBar , setIsOtherSideBarContentVisible }: ITableProps) => {
   const [rowData, setRowData] = useState([
     {
       jcn: "23003058",
@@ -316,7 +317,9 @@ const Table = ({ setOpenSideBar, openSideBar }: ITableProps) => {
       <AgGridReact
         columnDefs={colDefs}
         rowData={rowData}
-        onCellClicked={() => setOpenSideBar(!openSideBar)}
+        onCellClicked={() => {setOpenSideBar(!openSideBar) 
+          setIsOtherSideBarContentVisible(true)
+        }}
       />
     </div>
   );

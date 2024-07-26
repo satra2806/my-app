@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import {
@@ -15,10 +15,11 @@ import ChevronUpIcon from "@/icons/ChevronUp";
 
 interface IProjectInformationFormProps {
   isEditable?: boolean;
+  isNewProject?: boolean;
 }
 
 const ProjectInformationForm = (
-  { isEditable }: IProjectInformationFormProps
+  { isEditable , isNewProject }: IProjectInformationFormProps
 ) => {
   const [processType, setProcessType] = useState("F&E");
   const [projectName, setProjectName] = useState(
@@ -43,8 +44,25 @@ const ProjectInformationForm = (
   const [projectCode, setProjectCode] = useState("");
   const [originatorRom, setOriginatorRom] = useState("$30,000.00");
 
+  useEffect(() => {
+   if(isNewProject){
+    setProcessType("");
+    setProjectName("");
+    setDescription("");
+    setProblemStatement("");
+    setProposedSolution("");
+    setImpacts("");
+    setAssumptions("");
+    setConstraints("");
+    setBenefits("");
+    setCip("");
+    setProjectCode("");
+    setOriginatorRom("");
+   }
+  }, []);
+
   return (
-    <Disclosure>
+    <Disclosure defaultOpen={isNewProject ? true : false}>
       {({ open }) => (
         <>
           <Disclosure.Button className="flex items-center justify-between w-full px-4 py-2 text-left text-lg font-medium text-white bg-blue-700 rounded-t-lg focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">

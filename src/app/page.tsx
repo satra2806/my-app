@@ -14,13 +14,20 @@ export default function Home() {
   const [openSideBar, setOpenSideBar] = useState(false);
   const {sideBarValue}  = useSelector((state: RootState) => state.sideBar);
   const [isEditable, setIsEditable] = useState(false);
+  const [isOtherSideBarContentVisible , setIsOtherSideBarContentVisible] = useState<boolean>(false);
+
+  
   return (
     <>
       <Navbar />
       <div className="mt-12 flex">
-        <SidebarOpen openSideBar={openSideBar} />
+        <SidebarOpen openSideBar={openSideBar} isOtherSideBarContentVisible={isOtherSideBarContentVisible}/>
         <div className="flex-grow flex flex-col">
-          <Table setOpenSideBar={setOpenSideBar} openSideBar={openSideBar} />
+          <Table
+            setOpenSideBar={setOpenSideBar}
+            openSideBar={openSideBar}
+            setIsOtherSideBarContentVisible={setIsOtherSideBarContentVisible}
+          />
           <ButtonGroup  setIsEditable={setIsEditable}  isEditable={isEditable}/>
           {openSideBar && <ProjectCard />}
           {sideBarValue === "Origination" && <ProjectInformationForm  isEditable={isEditable} />}
