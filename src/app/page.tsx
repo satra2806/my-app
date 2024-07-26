@@ -28,8 +28,9 @@ export default function Home() {
             openSideBar={openSideBar}
             setIsOtherSideBarContentVisible={setIsOtherSideBarContentVisible}
           />
-          <ButtonGroup  setIsEditable={setIsEditable}  isEditable={isEditable}/>
+        
           {openSideBar && <ProjectCard />}
+         { sideBarValue === "Origination" && <ButtonGroup  setIsEditable={setIsEditable}  isEditable={isEditable}/>}
           {sideBarValue === "Origination" && <ProjectInformationForm  isEditable={isEditable} />}
         </div>
       </div>

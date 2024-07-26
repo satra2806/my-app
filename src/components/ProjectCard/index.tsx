@@ -6,7 +6,7 @@ import ChevronUpIcon from '@/icons/ChevronUp';
 
 const ProjectCard = () => {
   return (
-    <Disclosure>
+    <Disclosure defaultOpen={true}>
       {({ open }) => (
         <>
           <Disclosure.Button className="flex items-center justify-between w-full px-4 py-2 text-left text-lg font-medium text-white bg-blue-700 rounded-t-lg focus:outline-none focus-visible:ring focus-visible:ring-purple-500 focus-visible:ring-opacity-75">
