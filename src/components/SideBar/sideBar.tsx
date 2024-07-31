@@ -7,47 +7,48 @@ const sidebarData = [
     title: 'Collections',
     color: 'yellow',
     items: [
-      { label: 'List', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'JCNSearch', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Actions', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Reports', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'List', value: 'list', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'JCNSearch', value: 'jcnSearch', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Actions', value: 'actions', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Reports', value: 'reports', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
     ],
   },
   {
     title: 'Project Details',
     color: 'yellow',
     items: [
-      { label: 'Progress', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Actions', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Origination', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Schedule', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Project Charter', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Project Team', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Cost Estimate', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Funding Requests', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Asset Tasks', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Work Authorization', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Baseline Scope', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Project Risk Plan', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Project Information', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Documents', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Project Status', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'JAI/CAI', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'WCN', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Progress', value: 'progress', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Actions', value: 'projectActions', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Origination', value: 'origination', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Schedule', value: 'schedule', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Project Charter', value: 'projectCharter', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Project Team', value: 'projectTeam', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Cost Estimate', value: 'costEstimate', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Funding Requests', value: 'fundingRequests', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Asset Tasks', value: 'assetTasks', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Work Authorization', value: 'workAuthorization', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Baseline Scope', value: 'baselineScope', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Project Risk Plan', value: 'projectRiskPlan', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Project Information', value: 'projectInformation', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Documents', value: 'documents', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Project Status', value: 'projectStatus', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'JAI/CAI', value: 'jaiCai', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'WCN', value: 'wcn', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
     ],
   },
   {
     title: 'Other Information',
     color: 'blue',
     items: [
-      { label: 'Financials', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Resources', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'Metrics', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'History', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
-      { label: 'OPPM', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Financials', value: 'financials', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Resources', value: 'resources', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'Metrics', value: 'metrics', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'History', value: 'history', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
+      { label: 'OPPM', value: 'oppm', bgColor: 'bg-gray-200', textColor: 'text-blue-600' },
     ],
   },
 ];
+
 
 interface ISidebarProps {
   openSideBar: boolean;
@@ -94,8 +95,8 @@ const Sidebar: React.FC<ISidebarProps> = ({ openSideBar, isOtherSideBarContentVi
                     {section.items.map((item, itemIdx) => (
                       <li
                         key={itemIdx}
-                        className={`cursor-pointer px-4 py-2 ${selectedLabel === item.label ? 'bg-blue-600 text-white' : item.bgColor} ${selectedLabel === item.label ? '' : item.textColor} rounded-lg`}
-                        onClick={() => handleItemClick(item.label)}
+                        className={`cursor-pointer px-4 py-2 ${selectedLabel === item.value ? 'bg-blue-600 text-white' : item.bgColor} ${selectedLabel === item.label ? '' : item.textColor} rounded-lg`}
+                        onClick={() => handleItemClick(item.value)}
                       >
                         {item.label}
                       </li>

@@ -5,9 +5,10 @@ import './ButtonGroup.css';
 interface IButtonGroupProps {
   setIsEditable: (isEditable: boolean) => void;
   isEditable: boolean;
+  buttonDisplay: Array<string>;
 }
 
-const ButtonGroup = ({ setIsEditable, isEditable }: IButtonGroupProps) => {
+const ButtonGroup = ({ setIsEditable, isEditable, buttonDisplay }: IButtonGroupProps) => {
   const [activeButton, setActiveButton] = useState<string>('Overview');
 
   const handleButtonClick = (buttonName: string) => {
@@ -19,30 +20,15 @@ const ButtonGroup = ({ setIsEditable, isEditable }: IButtonGroupProps) => {
 
   return (
     <div className="button-group">
-      <button
-        className={`button overview ${activeButton === 'Overview' ? 'active' : ''}`}
-        onClick={() => handleButtonClick('Overview')}
-      >
-        Overview
-      </button>
-      <button
-        className={`button modify ${activeButton === 'Modify' ? 'active' : ''}`}
-        onClick={() => handleButtonClick('Modify')}
-      >
-        Modify
-      </button>
-      <button
-        className={`button disposition ${activeButton === 'Disposition' ? 'active' : ''}`}
-        onClick={() => handleButtonClick('Disposition')}
-      >
-        Disposition
-      </button>
-      <button
-        className={`button history ${activeButton === 'History' ? 'active' : ''}`}
-        onClick={() => handleButtonClick('History')}
-      >
-        History
-      </button>
+      {buttonDisplay.map((buttonName) => (
+        <button
+          key={buttonName}
+          className={`button ${buttonName.toLowerCase()} ${activeButton === buttonName ? 'active' : ''}`}
+          onClick={() => handleButtonClick(buttonName)}
+        >
+          {buttonName}
+        </button>
+      ))}
     </div>
   );
 };
