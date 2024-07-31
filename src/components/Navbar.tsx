@@ -119,8 +119,8 @@ const menuData = [
 ];
 
 const Navbar = () => {
-  const renderMenuItems = (items) => {
-    return items.map((item) => (
+  const renderMenuItems = (items:any) => {
+    return items.map((item:any) => (
       item.subItems ? (
         <MenubarSub key={item.label}>
           <MenubarSubTrigger>{item.label}</MenubarSubTrigger>

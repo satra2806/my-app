@@ -59,7 +59,7 @@ const ProjectInformationForm = (
     setProjectCode("");
     setOriginatorRom("");
    }
-  }, []);
+  }, [isNewProject]);
 
   return (
     <Disclosure defaultOpen={isNewProject ? true : false}>
